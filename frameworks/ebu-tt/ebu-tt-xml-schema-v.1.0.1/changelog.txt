@@ -1,0 +1,31 @@
+---------------------------------
+Changelog
+---------------------------------
+v.0.9   - 17/01/2012
+---------------------------------
+* Initial relase of the XML Schema
+---------------------------------
+v.0.9.1 - 03/02/2012
+---------------------------------
+* Bug fix of XML Schema Simple Type definition "timingType"
+- The regular expression for the timing type did not allow hours values in the timecodes between 04 and 09 (e.g. 09:00:00:00). This has been fixed.
+---------------------------------
+v.1.0 - 31/07/2012
+---------------------------------
+* Changes according to the relase of EBU Tech 3350 version 1.0 (stable version)
+---------------------------------
+v.1.0.1 - 31/07/2012
+---------------------------------
+* Bug fix XML element declaration ebutts:multiRowAlign
+- Fixed spelling error (from ebutts:multiRowAllign to ebutts:multiRowAlign)
+* Bug fix length type definitions
+- Fixed constraining regular expressions for values of type buttdt:lengthType.
+- RE did not allow real numbers (e.g. tts:origin="80.5% 80.5%" was not valid but is allowed according to EBU Tech 3350)
+- The change effects the following attributes: 
+  - tts:extent
+  - tts:origin
+  - tts:padding
+  - tts:fontSize
+  - tts:lineHeight
+* Local import of xml.xsd
+- The import of the xml.xsd from the W3C server results in perfomance issues because requests are throttled.

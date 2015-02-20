@@ -1,0 +1,573 @@
+@namespace tt "http://www.w3.org/ns/ttml";
+@namespace tts "http://www.w3.org/ns/ttml#styling";
+@namespace ebuttm "urn:ebu:tt:metadata";
+@namespace ebutts "urn:ebu:tt:style";
+@namespace ttm "http://www.w3.org/ns/ttml#metadata";
+
+tt|tt, 
+tt|head,
+tt|metadata,
+tt|styling,
+tt|style,
+tt|layout,
+tt|region,
+tt|body, 
+tt|div,
+tt|p
+{
+    display:block;
+}
+
+/* styling */
+tt|styling:before {
+    content: "Styles ";
+    background-color:orange;
+    border-bottom : 1px solid black;
+    border-right : 1px solid black;
+}
+
+tt|styling {
+    border : 1px solid black;
+    margin:1em;
+    padding:0.2em;
+}
+
+/* edit/done button for a style */
+tt|style:before {
+    display:block;
+    text-align:left;
+    content :
+        oxy_button(
+         action, oxy_action(
+          name, 'Edit', 
+          description, 'Edit styles', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-edit'
+          )
+          showIcon, true
+         )
+    ;
+    
+}
+tt|style:oxy-edit:before {
+    content :
+        oxy_button(
+         action, oxy_action(
+          name, 'Done', 
+          description, 'Edit styles', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-edit'
+          )
+          showIcon, true
+         )
+    ;
+}
+
+/* render only the name of a style */
+tt|style {
+    margin:0.2em;
+    border : 1px solid black;
+    padding:0.5em;
+    content : attr(xml|id);
+}
+
+/* editing mode - show all attributes */
+tt|style:oxy-edit {
+    
+    border : 1px solid blue;
+
+    content:
+     oxy_label(text, "Style ID: ", width, 8em)
+        oxy_textfield(
+            edit, '@xml:id',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Color: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:color',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Background color: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:backgroundColor',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Font family: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:fontFamily',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Font size: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:fontSize',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Font style: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:fontStyle',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Font weight: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:fontWeight',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Text align: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:textAlign',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Text decoration: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:textDecoration',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Line height: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:lineHeight',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Direction: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:direction',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Unicode BiDi: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:unicodeBidi',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Padding: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:padding',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Multi Row Align: ", width, 8em)
+        oxy_textfield(
+            edit, '@ebutts:multiRowAlign',
+            width, 22em
+        )
+        
+        
+        "\A"
+        oxy_label(text, "Other styles: ", width, 8em)
+        oxy_textfield(
+            edit, '@style',
+            width, 22em
+        )
+    ;
+}
+
+/* preview style */
+tt|style:after {
+    color:white;
+    background-color:black;
+    display:block;
+    padding:0.2em;
+    border:1px solid black;
+    content:attr(xml|id) " " attr(xml|id) " " attr(xml|id);
+}
+tt|style[tts|textAlign]:after{
+    text-align:attr(tts|textAlign);
+}
+tt|style[tts|textAlign~=start]:after{
+    text-align:left;
+}
+tt|style[tts|textAlign~=end]:after{
+    text-align:right;
+}
+tt|style[tts|color]:after{
+    color:attr(tts|color);
+}
+tt|style[tts|backgroundColor]:after{
+    background-color:attr(tts|backgroundColor);
+}
+tt|style[tts|backgroundColor~=transparent]:after{
+    background-color:black;
+}
+
+/* Layout - regions */
+tt|layout:before {
+    content: "Layout ";
+    background-color:orange;
+    border-bottom : 1px solid black;
+    border-right : 1px solid black;
+}
+tt|layout {
+    border : 1px solid black;
+    margin:1em;
+    padding:0.2em;
+}
+
+/* edit/done button for a region elements */
+tt|region:before {
+    display:block;
+    text-align:left;
+    content :
+        oxy_button(
+         action, oxy_action(
+          name, 'Edit', 
+          description, 'Edit regions', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-edit'
+          )
+          showIcon, true
+         )
+    ;
+    
+}
+tt|region:oxy-edit:before {
+    content :
+        oxy_button(
+         action, oxy_action(
+          name, 'Done', 
+          description, 'Edit regions', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-edit'
+          )
+          showIcon, true
+         )
+    ;
+}
+
+/* render only the name of a style */
+tt|region {
+    margin:0.2em;
+    border : 1px solid black;
+    padding:0.5em;
+    content : attr(xml|id);
+}
+
+/* editing mode - show all attributes */
+tt|region:oxy-edit {
+    
+    border : 1px solid blue;
+
+    content:
+     oxy_label(text, "Region ID: ", width, 8em)
+        oxy_textfield(
+            edit, '@xml:id',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Origin: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:origin',
+            width, 22em
+        )
+        "\A"
+        oxy_label(text, "Extent: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:extent',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Display align: ", width, 8em)
+        oxy_combobox(
+            edit, '@tts:displayAlign',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Padding: ", width, 8em)
+        oxy_textfield(
+            edit, '@tts:padding',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Writing mode: ", width, 8em)
+        oxy_combobox(
+            edit, '@tts:writingMode',
+            width, 22em
+        )
+        
+        "\A"
+        oxy_label(text, "Styles: ", width, 8em)
+        oxy_textfield(
+            edit, '@style',
+            width, 22em
+        )
+    ;
+}
+
+
+
+
+
+
+
+
+/* Brake line on <br/> */
+tt|br {
+    /*↵*/
+    content : "\A"; 
+}
+tt|p:oxy-edit tt|br {
+    /*↵*/
+    content : "↵\A"; 
+}
+
+tt|div:before {
+    content: "Subtitles ";
+    background-color:orange;
+    border-bottom : 1px solid black;
+    border-right : 1px solid black;
+}
+tt|div {
+    border : 1px solid black;
+    margin:1em;
+    padding:0.2em;    
+}
+
+
+
+
+
+
+
+/* edit/done button for a p */
+tt|p:before {
+    display:block;
+    color:black;
+    background-color:white;
+    text-align:left;
+    border-bottom : 1px solid black;
+    margin-bottom:0.2em;
+    content :
+        oxy_button(
+         action, oxy_action(
+          name, 'Edit', 
+          description, 'Edit paragraph info', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-edit'
+          )
+          showIcon, true
+         )
+         oxy_button(
+         action, oxy_action(
+          name, 'Show/Hide styles', 
+          description, 'Edit styles on embedded span elements', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-editStyles'
+          )
+          showIcon, true
+         )
+         oxy_textfield(
+            edit, '@xml:id',
+            width, 8em
+         )
+         oxy_textfield(
+            edit, '@begin',
+            width, 8em
+         )
+         oxy_textfield(
+            edit, '@end',
+            width, 8em
+         )
+    ;
+    
+}
+
+tt|p:oxy-edit:before {
+    content:
+         oxy_button(
+         action, oxy_action(
+          name, 'Done', 
+          description, 'Edit paragraph info', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-edit'
+          )
+          showIcon, true
+         )
+         oxy_button(
+         action, oxy_action(
+          name, 'Show/Hide styles', 
+          description, 'Edit styles on embedded span elements', 
+          operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
+          arg-elementLocation, '.',
+          arg-name, 'oxy-editStyles'
+          )
+          showIcon, true
+         )
+         "\A"
+        oxy_label(text, "ID: ", width, 6em)
+        oxy_textfield(
+            edit, '@xml:id',
+            width, 8em
+        )
+        "\A"
+        oxy_label(text, "Begin: ", width, 6em)
+        oxy_textfield(
+            edit, '@begin',
+            width, 8em
+        )
+        " "
+        oxy_label(text, "End: ", width, 6em)
+        oxy_textfield(
+            edit, '@end',
+            width, 8em
+        )
+        "\A"
+        oxy_label(text, "Region: ", width, 6em)
+        oxy_combobox( 
+            edit, '@region',
+            width, 8em,
+            editable, false,
+            values, oxy_xpath('string-join(//*:region/@xml:id, ",")')
+            
+        )
+        
+        " "
+        oxy_label(text, "Style: ", width, 6em)
+        oxy_combobox( 
+            edit, '@style',
+            editable, false,
+            values, oxy_xpath('string-join(//*:style/@xml:id, ",")')
+            
+        )
+        
+        "\A"
+        oxy_label(text, "Agent: ", width, 6em)
+        oxy_textfield( 
+            edit, '@ttm:agent',
+            width, 8em
+            
+        )
+        
+        " "
+        oxy_label(text, "Role: ", width, 6em)
+        oxy_textfield( 
+            edit, '@ttm:role'
+            width, 8em
+        )
+        
+        "\A"
+        oxy_label(text, "Whitespace: ", width, 6em)
+        oxy_combobox( 
+            edit, '@xml:space',
+            width, 8em
+            
+            
+        )
+        
+        " "
+        oxy_label(text, "Language: ", width, 6em)
+        oxy_textfield( 
+            edit, '@xml:lang',
+            width, 8em
+            
+            
+        )
+        
+    ;
+}
+
+tt|p {
+    white-space:-oxy-trim-when-ws-only;
+    border : 1px solid black;
+    margin:1em;
+    padding:1em;
+    text-align:oxy_xpath("replace(replace(let $ps:=@style, $ds:=../@style return (//*:style[@xml:id=$ps]/@*:textAlign, //*:style[@xml:id=$ds]/@*:textAlign, 'left')[1], 'start', 'left'), 'end','right')");
+}
+
+tt|p:oxy-edit {
+    border : 1px solid blue;
+}
+
+tt|p:oxy-editStyles {
+    border : 1px solid blue;
+}
+
+tt|p:oxy-editStyles > tt|span:after {
+    content:
+        oxy_combobox( 
+            edit, '@style',
+            editable, false,
+            values, oxy_xpath('string-join(//*:style/@xml:id, ",")')
+        )
+
+}
+
+tt|span[style] {
+    color : oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:color, //*:style[@xml:id=$ps]/@*:color, //*:style[@xml:id=$ds]/@*:color, 'white')[1], 'transparent', 'white')");    
+    background-color:oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:backgroundColor, //*:style[@xml:id=$ps]/@*:backgroundColor, //*:style[@xml:id=$ds]/@*:backgroundColor, 'black')[1], 'transparent', 'black')");
+}
+
+
+/* metadata */
+tt|metadata:before {
+    content: "Metadata ";
+    background-color:orange;
+    border-bottom : 1px solid black;
+    border-right : 1px solid black;
+}
+
+tt|metadata {
+    border : 1px solid black;
+    margin:1em;
+    padding:0.2em;
+}
+
+tt|metadata *:before {
+    display:block;
+    color:green;
+    background-color:#FFF5F5;
+    content:oxy_local-name();
+}
+tt|metadata * {
+    display:block;
+    margin-left:1em;
+    padding:0.2em;
+    background-color:white;
+}
+
+
+
+/*
+ * TODO: 
+ *  div attributes
+ *  br/@ttm:role
+ *  span attributes
+ *  add actions
+ * 
+ */
+
+
+
+
+
+
+
+
+
+
+

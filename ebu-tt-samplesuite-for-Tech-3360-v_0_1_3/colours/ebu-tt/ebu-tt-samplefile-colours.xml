@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Copyright (c) 2013 by Institut fuer Rundfunktechnik GmbH. 
+This work is made available under the terms of the Creative Commons Attribution-ShareAlike 3.0 license, 
+http://creativecommons.org/licenses/by-sa/3.0/
+
+This sample file should illustrate the application of EBU Tech 3360, MAPPING EBU STL (TECH 3264) TO EBU-TT SUBTITLE FILES, VER. 0.9. Please note that Version 0.9 of Tech 3360 is a draft document and may be updated, replaced or obsoleted by other documents at any time. The same applies to the sample file.
+--> 
+<!-- v0.1.2 -->
+<tt:tt ttp:timeBase="smpte" xml:lang="en" xmlns:tt="http://www.w3.org/ns/ttml" xmlns:ttp="http://www.w3.org/ns/ttml#parameter" xmlns:tts="http://www.w3.org/ns/ttml#styling" ttp:cellResolution="50 30" xmlns:ebuttm="urn:ebu:tt:metadata" tts:extent="704px 576px" ttp:dropMode="nonDrop" ttp:frameRate="25" ttp:frameRateMultiplier="1 1" ttp:markerMode="discontinuous">
+	<tt:head>
+		<tt:metadata>
+			<ebuttm:documentMetadata>
+				<ebuttm:documentEbuttVersion>v1.0</ebuttm:documentEbuttVersion>
+				<ebuttm:documentTotalNumberOfSubtitles>18</ebuttm:documentTotalNumberOfSubtitles>
+				<ebuttm:documentMaximumNumberOfDisplayableCharacterInAnyRow>40</ebuttm:documentMaximumNumberOfDisplayableCharacterInAnyRow>
+				<ebuttm:documentStartOfProgramme>00:00:00:00</ebuttm:documentStartOfProgramme>
+				<ebuttm:documentCountryOfOrigin>GB</ebuttm:documentCountryOfOrigin>
+				<ebuttm:documentPublisher>Institut fuer Rundfunktechnik</ebuttm:documentPublisher>
+			</ebuttm:documentMetadata>
+		</tt:metadata>
+		<tt:styling>
+			<tt:style xml:id="defaultStyle" tts:fontFamily="monospaceSansSerif" tts:fontSize="1c 1c" tts:lineHeight="normal" tts:textAlign="center" tts:color="white" tts:backgroundColor="transparent" tts:fontStyle="normal" tts:fontWeight="normal" tts:textDecoration="none"/>
+			<tt:style xml:id="BlackOnWhite" tts:color="black" tts:backgroundColor="white"
+				tts:fontSize="1c 2c"/>
+			<tt:style xml:id="RedOnBlack" tts:color="red" tts:backgroundColor="black" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="GreenOnBlack" tts:color="green" tts:backgroundColor="black" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="YellowOnBlack" tts:color="yellow" tts:backgroundColor="black" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="BlueOnYellow" tts:color="blue" tts:backgroundColor="yellow" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="BlueOnWhite" tts:color="blue" tts:backgroundColor="white" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="MagentaOnBlack" tts:color="magenta" tts:backgroundColor="black" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="CyanOnBlack" tts:color="cyan" tts:backgroundColor="black" tts:fontSize="1c 2c"/>
+			<tt:style xml:id="WhiteOnBlack" tts:color="white" tts:backgroundColor="black"
+				tts:fontSize="1c 2c"/>
+			<tt:style xml:id="textCenter" tts:textAlign="center"/>
+		</tt:styling>
+		<tt:layout>
+			<tt:region xml:id="bottom" tts:origin="10% 10%" tts:extent="80% 80%" tts:padding="0c" tts:displayAlign="after" tts:writingMode="lrtb"/>
+		</tt:layout>
+	</tt:head>
+	<tt:body>
+		<tt:div style="defaultStyle">
+			<tt:p xml:id="sub1" style="textCenter" region="bottom" begin="00:00:00:00" end="00:00:02:03">
+				<tt:span style="WhiteOnBlack">white on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub2" style="textCenter" region="bottom" begin="00:00:02:07" end="00:00:04:07">
+				<tt:span style="YellowOnBlack">yellow on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub3" style="textCenter" region="bottom" begin="00:00:04:11" end="00:00:06:14"
+					><tt:span style="GreenOnBlack">green on black</tt:span></tt:p>
+			<tt:p xml:id="sub4" style="textCenter" region="bottom" begin="00:00:06:18" end="00:00:08:21">
+				<tt:span style="CyanOnBlack">cyan on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub5" style="textCenter" region="bottom" begin="00:00:09:00" end="00:00:11:01">
+				<tt:span style="MagentaOnBlack">magenta on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub6" style="textCenter" region="bottom" begin="00:00:11:05" end="00:00:13:02">
+				<tt:span style="RedOnBlack">red on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub7" style="textCenter" region="bottom" begin="00:00:13:06" end="00:00:15:02">
+				<tt:span style="BlueOnYellow">blue on yellow</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub8" style="textCenter" region="bottom" begin="00:00:15:06" end="00:00:17:05">
+				<tt:span style="BlackOnWhite">black on white</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub9" style="textCenter" region="bottom" begin="00:00:17:09" end="00:00:20:06">
+				<tt:span style="WhiteOnBlack">white on black </tt:span>
+				<tt:br/>
+				<tt:span style="BlueOnYellow">and blue on yellow</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub10" style="textCenter" region="bottom" begin="00:00:20:10" end="00:00:23:00">
+				<tt:span style="WhiteOnBlack">a </tt:span>
+				<tt:span style="RedOnBlack">red</tt:span>
+				<tt:span style="WhiteOnBlack"> word</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub11" style="textCenter" region="bottom" begin="00:00:23:04" end="00:00:26:20">
+				<tt:span style="WhiteOnBlack">A </tt:span>
+				<tt:span style="BlueOnYellow">blue</tt:span>
+				<tt:span style="WhiteOnBlack"> word</tt:span>
+				<tt:br/>
+				<tt:span style="WhiteOnBlack">on yellow background.</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub12" style="textCenter" region="bottom" begin="00:00:26:24" end="00:00:29:05">
+				<tt:span style="BlueOnYellow">A blue </tt:span>
+				<tt:span style="BlueOnWhite">word</tt:span>
+				<tt:span style="BlueOnYellow"> on white </tt:span>
+			</tt:p>
+			<tt:p xml:id="sub13" style="textCenter" region="bottom" begin="00:00:29:09" end="00:00:31:09">
+				<tt:span style="WhiteOnBlack">white on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub14" style="textCenter" region="bottom" begin="00:00:31:13" end="00:00:33:15">
+				<tt:span style="WhiteOnBlack">white on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub15" style="textCenter" region="bottom" begin="00:00:33:19" end="00:00:35:20">
+				<tt:span style="WhiteOnBlack">white on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub16" style="textCenter" region="bottom" begin="00:00:35:24" end="00:00:37:22">
+				<tt:span style="YellowOnBlack">yellow on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub17" style="textCenter" region="bottom" begin="00:00:38:01" end="00:00:40:01">
+				<tt:span style="YellowOnBlack">yellow on black</tt:span>
+			</tt:p>
+			<tt:p xml:id="sub18" style="textCenter" region="bottom" begin="00:00:40:05" end="00:00:42:03">
+				<tt:span style="YellowOnBlack">yellow on black</tt:span>
+			</tt:p>
+		</tt:div>
+	</tt:body>
+</tt:tt>
