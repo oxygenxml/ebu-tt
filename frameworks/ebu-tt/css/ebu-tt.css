@@ -30,7 +30,7 @@ tt|metadata:before {
 }
 
 tt|metadata {
-    border : 1px solid black;
+    border : 1px solid lightgray;
     margin:1em;
     padding:0.2em;
     border-radius:5px;
@@ -41,12 +41,17 @@ tt|metadata *:before {
     color:green;
     background-color:#FFF5F5;
     content:oxy_local-name();
+    border-radius:5px;
 }
 tt|metadata * {
     display:block;
     margin-left:1em;
+    margin-top:0.2em;
+    margin-bottom:0.2em;
     padding:0.2em;
     background-color:white;
+    /*border : 1px solid lightgray;*/
+    border-radius:5px;
 }
 
 
@@ -61,7 +66,7 @@ tt|styling:before {
 }
 
 tt|styling {
-    border : 1px solid black;
+    border : 1px solid lightgray;
     margin:1em;
     padding:0.2em;
     border-radius:5px;
@@ -103,7 +108,7 @@ tt|style:oxy-edit:before {
 /* render only the name of a style */
 tt|style {
     margin:0.5em;
-    border : 1px solid black;
+    /*border : 1px solid lightgray;*/
     padding:0.5em;
     content : attr(xml|id);
     border-radius:5px;
@@ -113,7 +118,7 @@ tt|style {
 tt|style:oxy-edit {
     
     border : 1px solid blue;
-    
+    background-color:#FFFAEC;
     content:
      oxy_label(text, "Style ID: ", width, 8em)
         oxy_textfield(
@@ -254,7 +259,7 @@ tt|layout:before {
     border-radius:5px;
 }
 tt|layout {
-    border : 1px solid black;
+    border : 1px solid lightgray;
     margin:1em;
     padding:0.2em;
     border-radius:5px;
@@ -296,7 +301,7 @@ tt|region:oxy-edit:before {
 /* render only the name of a style */
 tt|region {
     margin:0.5em;
-    border : 1px solid black;
+    /*border : 1px solid lightgray;*/
     padding:0.5em;
     content : attr(xml|id);
     border-radius:5px;
@@ -306,7 +311,7 @@ tt|region {
 tt|region:oxy-edit {
     
     border : 1px solid blue;
-
+    background-color:#FFFAEC;
     content:
      oxy_label(text, "Region ID: ", width, 8em)
         oxy_textfield(
@@ -381,7 +386,7 @@ tt|div:before {
     border-radius:5px;
 }
 tt|div {
-    border : 1px solid black;
+    border : 1px solid lightgray;
     margin:1em;
     padding:0.2em; 
     border-radius:5px;
@@ -394,7 +399,7 @@ tt|p:before {
     color:black;
     background-color:white;
     text-align:left;
-    border-bottom : 1px solid black;
+    border-bottom : 1px solid lightgray;
     padding-bottom:0.5em;
     margin-bottom:0.5em;
     content :
@@ -531,7 +536,7 @@ tt|p:oxy-edit:before {
 
 tt|p {
     white-space:-oxy-trim-when-ws-only;
-    border : 1px solid black;
+    /*border : 1px solid lightgray;*/
     border-radius:5px;
     margin:1em;
     padding:1em;
@@ -540,12 +545,23 @@ tt|p {
 
 tt|p:oxy-edit {
     border : 1px solid blue;
+    background-color:#FFFAEC;
 }
 
 
-tt|span[style] {
+tt|span {
     color : oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:color, //*:style[@xml:id=$ps]/@*:color, //*:style[@xml:id=$ds]/@*:color, 'white')[1], 'transparent', 'white')");    
     background-color:oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:backgroundColor, //*:style[@xml:id=$ps]/@*:backgroundColor, //*:style[@xml:id=$ds]/@*:backgroundColor, 'black')[1], 'transparent', 'black')");
+}
+
+tt|span:first-child {
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+
+tt|span:last-child {
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
 }
 
 tt|p:oxy-editStyles > tt|span:after {
