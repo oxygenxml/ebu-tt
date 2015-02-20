@@ -548,8 +548,8 @@ tt|p:oxy-edit {
     background-color:#FFFAEC;
 }
 
-
-tt|span {
+tt|span,
+tt|span[style] {
     color : oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:color, //*:style[@xml:id=$ps]/@*:color, //*:style[@xml:id=$ds]/@*:color, 'white')[1], 'transparent', 'white')");    
     background-color:oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:backgroundColor, //*:style[@xml:id=$ps]/@*:backgroundColor, //*:style[@xml:id=$ds]/@*:backgroundColor, 'black')[1], 'transparent', 'black')");
 }
