@@ -18,18 +18,53 @@ tt|p
     display:block;
 }
 
-/* styling */
-tt|styling:before {
-    content: "Styles ";
+
+
+/* metadata */
+tt|metadata:before {
+    content: "\A0 Metadata \A0";
     background-color:orange;
     border-bottom : 1px solid black;
     border-right : 1px solid black;
+    border-radius:5px;
+}
+
+tt|metadata {
+    border : 1px solid black;
+    margin:1em;
+    padding:0.2em;
+    border-radius:5px;
+}
+
+tt|metadata *:before {
+    display:block;
+    color:green;
+    background-color:#FFF5F5;
+    content:oxy_local-name();
+}
+tt|metadata * {
+    display:block;
+    margin-left:1em;
+    padding:0.2em;
+    background-color:white;
+}
+
+
+
+/* styling */
+tt|styling:before {
+    content: "\A0 Styles \A0";
+    background-color:orange;
+    border-bottom : 1px solid black;
+    border-right : 1px solid black;
+    border-radius:5px;
 }
 
 tt|styling {
     border : 1px solid black;
     margin:1em;
     padding:0.2em;
+    border-radius:5px;
 }
 
 /* edit/done button for a style */
@@ -67,17 +102,18 @@ tt|style:oxy-edit:before {
 
 /* render only the name of a style */
 tt|style {
-    margin:0.2em;
+    margin:0.5em;
     border : 1px solid black;
     padding:0.5em;
     content : attr(xml|id);
+    border-radius:5px;
 }
 
 /* editing mode - show all attributes */
 tt|style:oxy-edit {
     
     border : 1px solid blue;
-
+    
     content:
      oxy_label(text, "Style ID: ", width, 8em)
         oxy_textfield(
@@ -187,6 +223,7 @@ tt|style:after {
     display:block;
     padding:0.2em;
     border:1px solid black;
+    border-radius:5px;
     content:attr(xml|id) " " attr(xml|id) " " attr(xml|id);
 }
 tt|style[tts|textAlign]:after{
@@ -210,15 +247,17 @@ tt|style[tts|backgroundColor~=transparent]:after{
 
 /* Layout - regions */
 tt|layout:before {
-    content: "Layout ";
+    content: "\A0 Layout \A0";
     background-color:orange;
     border-bottom : 1px solid black;
     border-right : 1px solid black;
+    border-radius:5px;
 }
 tt|layout {
     border : 1px solid black;
     margin:1em;
     padding:0.2em;
+    border-radius:5px;
 }
 
 /* edit/done button for a region elements */
@@ -256,10 +295,11 @@ tt|region:oxy-edit:before {
 
 /* render only the name of a style */
 tt|region {
-    margin:0.2em;
+    margin:0.5em;
     border : 1px solid black;
     padding:0.5em;
     content : attr(xml|id);
+    border-radius:5px;
 }
 
 /* editing mode - show all attributes */
@@ -334,21 +374,18 @@ tt|p:oxy-edit tt|br {
 }
 
 tt|div:before {
-    content: "Subtitles ";
+    content: "\A0 Subtitles \A0";
     background-color:orange;
     border-bottom : 1px solid black;
     border-right : 1px solid black;
+    border-radius:5px;
 }
 tt|div {
     border : 1px solid black;
     margin:1em;
-    padding:0.2em;    
+    padding:0.2em; 
+    border-radius:5px;
 }
-
-
-
-
-
 
 
 /* edit/done button for a p */
@@ -358,7 +395,8 @@ tt|p:before {
     background-color:white;
     text-align:left;
     border-bottom : 1px solid black;
-    margin-bottom:0.2em;
+    padding-bottom:0.5em;
+    margin-bottom:0.5em;
     content :
         oxy_button(
          action, oxy_action(
@@ -494,6 +532,7 @@ tt|p:oxy-edit:before {
 tt|p {
     white-space:-oxy-trim-when-ws-only;
     border : 1px solid black;
+    border-radius:5px;
     margin:1em;
     padding:1em;
     text-align:oxy_xpath("replace(replace(let $ps:=@style, $ds:=../@style return (//*:style[@xml:id=$ps]/@*:textAlign, //*:style[@xml:id=$ds]/@*:textAlign, 'left')[1], 'start', 'left'), 'end','right')");
@@ -503,11 +542,14 @@ tt|p:oxy-edit {
     border : 1px solid blue;
 }
 
-tt|p:oxy-editStyles {
-    border : 1px solid blue;
+
+tt|span[style] {
+    color : oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:color, //*:style[@xml:id=$ps]/@*:color, //*:style[@xml:id=$ds]/@*:color, 'white')[1], 'transparent', 'white')");    
+    background-color:oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:backgroundColor, //*:style[@xml:id=$ps]/@*:backgroundColor, //*:style[@xml:id=$ds]/@*:backgroundColor, 'black')[1], 'transparent', 'black')");
 }
 
 tt|p:oxy-editStyles > tt|span:after {
+    vertical-align:central;
     content:
         oxy_combobox( 
             edit, '@style',
@@ -517,38 +559,8 @@ tt|p:oxy-editStyles > tt|span:after {
 
 }
 
-tt|span[style] {
-    color : oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:color, //*:style[@xml:id=$ps]/@*:color, //*:style[@xml:id=$ds]/@*:color, 'white')[1], 'transparent', 'white')");    
-    background-color:oxy_xpath("replace(let $s:=@style, $ps:=../@style, $ds:=../../@style return (//*:style[@xml:id=$s]/@*:backgroundColor, //*:style[@xml:id=$ps]/@*:backgroundColor, //*:style[@xml:id=$ds]/@*:backgroundColor, 'black')[1], 'transparent', 'black')");
-}
 
 
-/* metadata */
-tt|metadata:before {
-    content: "Metadata ";
-    background-color:orange;
-    border-bottom : 1px solid black;
-    border-right : 1px solid black;
-}
-
-tt|metadata {
-    border : 1px solid black;
-    margin:1em;
-    padding:0.2em;
-}
-
-tt|metadata *:before {
-    display:block;
-    color:green;
-    background-color:#FFF5F5;
-    content:oxy_local-name();
-}
-tt|metadata * {
-    display:block;
-    margin-left:1em;
-    padding:0.2em;
-    background-color:white;
-}
 
 
 
