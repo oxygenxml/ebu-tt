@@ -186,14 +186,22 @@ tt|style:after {
     display:block;
     padding:0.2em;
     border-radius:5px;
+    
     content:
         oxy_label(
             text, 
             oxy_concat(attr(xml|id), ' ', attr(xml|id), ' ', attr(xml|id), ' '),
             color, oxy_xpath("replace((@*:color[.!=''], 'white')[1], 'transparent', 'white')"),
-            background-color, oxy_xpath("replace((@*:backgroundColor[.!=''], 'black')[1], 'transparent', 'black')")
+            background-color, oxy_xpath("replace((@*:backgroundColor[.!=''], 'black')[1], 'transparent', 'black')"),
+            width, 100%,
+            styles, oxy_concat(
+                'text-align:',
+                oxy_xpath("replace(replace((@*:textAlign, 'left')[1], 'start', 'left'), 'end','right')"),
+                ';'
+            )
         );
 }
+
 
 /* editing mode - show all region attributes */
 tt|region:oxy-edit {
