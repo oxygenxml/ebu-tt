@@ -102,77 +102,77 @@ tt|style, tt|region {
 /* editing mode for styles - show all attributes */
 tt|style:oxy-edit {
     content:
-     oxy_label(text, "Style ID: ", width, 8em)
+     oxy_label(text, "Style ID: ", width, 10em)
         oxy_textfield(
             edit, '@xml:id',
             width, 22em
         ) "\A"
-        oxy_label(text, "Color: ", width, 8em)
+        oxy_label(text, "Color: ", width, 10em)
         oxy_textfield(
             edit, '@tts:color',
             width, 22em
         ) "\A"
-        oxy_label(text, "Background color: ", width, 8em)
+        oxy_label(text, "Background color: ", width, 10em)
         oxy_textfield(
             edit, '@tts:backgroundColor',
             width, 22em
         ) "\A"
-        oxy_label(text, "Font family: ", width, 8em)
+        oxy_label(text, "Font family: ", width, 10em)
         oxy_textfield(
             edit, '@tts:fontFamily',
             width, 22em
         ) "\A"
-        oxy_label(text, "Font size: ", width, 8em)
+        oxy_label(text, "Font size: ", width, 10em)
         oxy_textfield(
             edit, '@tts:fontSize',
             width, 22em
         ) "\A"
-        oxy_label(text, "Font style: ", width, 8em)
+        oxy_label(text, "Font style: ", width, 10em)
         oxy_textfield(
             edit, '@tts:fontStyle',
             width, 22em
         ) "\A"
-        oxy_label(text, "Font weight: ", width, 8em)
+        oxy_label(text, "Font weight: ", width, 10em)
         oxy_textfield(
             edit, '@tts:fontWeight',
             width, 22em
         ) "\A"
-        oxy_label(text, "Text align: ", width, 8em)
+        oxy_label(text, "Text align: ", width, 10em)
         oxy_textfield(
             edit, '@tts:textAlign',
             width, 22em
         ) "\A"
-        oxy_label(text, "Text decoration: ", width, 8em)
+        oxy_label(text, "Text decoration: ", width, 10em)
         oxy_textfield(
             edit, '@tts:textDecoration',
             width, 22em
         ) "\A"
-        oxy_label(text, "Line height: ", width, 8em)
+        oxy_label(text, "Line height: ", width, 10em)
         oxy_textfield(
             edit, '@tts:lineHeight',
             width, 22em
         ) "\A"
-        oxy_label(text, "Direction: ", width, 8em)
+        oxy_label(text, "Direction: ", width, 10em)
         oxy_textfield(
             edit, '@tts:direction',
             width, 22em
         ) "\A"
-        oxy_label(text, "Unicode BiDi: ", width, 8em)
+        oxy_label(text, "Unicode BiDi: ", width, 10em)
         oxy_textfield(
             edit, '@tts:unicodeBidi',
             width, 22em
         ) "\A"
-        oxy_label(text, "Padding: ", width, 8em)
+        oxy_label(text, "Padding: ", width, 10em)
         oxy_textfield(
             edit, '@tts:padding',
             width, 22em
         ) "\A"
-        oxy_label(text, "Multi Row Align: ", width, 8em)
+        oxy_label(text, "Multi Row Align: ", width, 10em)
         oxy_textfield(
             edit, '@ebutts:multiRowAlign',
             width, 22em
         ) "\A"
-        oxy_label(text, "Other styles: ", width, 8em)
+        oxy_label(text, "Other styles: ", width, 10em)
         oxy_textfield(
             edit, '@style',
             width, 22em
@@ -206,37 +206,37 @@ tt|style:after {
 /* editing mode - show all region attributes */
 tt|region:oxy-edit {
     content:
-     oxy_label(text, "Region ID: ", width, 8em)
+     oxy_label(text, "Region ID: ", width, 10em)
         oxy_textfield(
             edit, '@xml:id',
             width, 22em
         ) "\A"
-        oxy_label(text, "Origin: ", width, 8em)
+        oxy_label(text, "Origin: ", width, 10em)
         oxy_textfield(
             edit, '@tts:origin',
             width, 22em
         ) "\A"
-        oxy_label(text, "Extent: ", width, 8em)
+        oxy_label(text, "Extent: ", width, 10em)
         oxy_textfield(
             edit, '@tts:extent',
             width, 22em
         ) "\A"
-        oxy_label(text, "Display align: ", width, 8em)
+        oxy_label(text, "Display align: ", width, 10em)
         oxy_combobox(
             edit, '@tts:displayAlign',
             width, 22em
         ) "\A"
-        oxy_label(text, "Padding: ", width, 8em)
+        oxy_label(text, "Padding: ", width, 10em)
         oxy_textfield(
             edit, '@tts:padding',
             width, 22em
         ) "\A"
-        oxy_label(text, "Writing mode: ", width, 8em)
+        oxy_label(text, "Writing mode: ", width, 10em)
         oxy_combobox(
             edit, '@tts:writingMode',
             width, 22em
         ) "\A"
-        oxy_label(text, "Styles: ", width, 8em)
+        oxy_label(text, "Styles: ", width, 10em)
         oxy_textfield(
             edit, '@style',
             width, 22em
@@ -267,7 +267,7 @@ tt|p:before {
                 arg-name, 'oxy-edit'
             )
             showIcon, true
-        )
+        ) "\A0"
         oxy_button(
             action, oxy_action(
                 name, 'Show/Hide styles', 
@@ -277,18 +277,18 @@ tt|p:before {
                 arg-name, 'oxy-editStyles'
             )
             showIcon, true
-        )
+        ) "\A0"
         oxy_textfield(
             edit, '@xml:id',
-            width, 8em
-        )
+            width, 10em
+        ) "\A0"
         oxy_textfield(
             edit, '@begin',
-            width, 8em
-        )
+            width, 10em
+        ) "\A0"
         oxy_textfield(
             edit, '@end',
-            width, 8em
+            width, 10em
         );
 }
 /* all p information */
@@ -303,7 +303,7 @@ tt|p:oxy-edit:before {
                 arg-name, 'oxy-edit'
             )
             showIcon, true
-        )
+        ) "\A0"
         oxy_button(
             action, oxy_action(
                 name, 'Show/Hide styles', 
@@ -314,54 +314,55 @@ tt|p:oxy-edit:before {
             )
             showIcon, true
         ) "\A"
-        oxy_label(text, "ID: ", width, 6em)
+        oxy_label(text, "ID: ", width, 8em)
         oxy_textfield(
             edit, '@xml:id',
-            width, 8em
+            width, 20%
         ) "\A"
-        oxy_label(text, "Begin: ", width, 6em)
+        oxy_label(text, "Begin: ", width, 8em)
         oxy_textfield(
             edit, '@begin',
-            width, 8em
-        ) " "
-        oxy_label(text, "End: ", width, 6em)
+            width, 20%
+        ) "\A0\A0\A0\A0\A0\A0\A0\A0"
+        oxy_label(text, "End: ", width, 8em)
         oxy_textfield(
             edit, '@end',
-            width, 8em
+            width, 20%
         ) "\A"
-        oxy_label(text, "Region: ", width, 6em)
+        oxy_label(text, "Region: ", width, 8em)
         oxy_combobox( 
             edit, '@region',
-            width, 8em,
+            width, 20%,
             editable, false,
             values, oxy_xpath('string-join(//*:region/@xml:id, ",")')
             
-        ) " "
-        oxy_label(text, "Style: ", width, 6em)
+        ) "\A0\A0\A0\A0\A0\A0\A0\A0"
+        oxy_label(text, "Style: ", width, 8em)
         oxy_combobox( 
             edit, '@style',
             editable, false,
-            values, oxy_xpath('string-join(//*:style/@xml:id, ",")')
+            values, oxy_xpath('string-join(//*:style/@xml:id, ",")'),
+            width, 20%
         ) "\A"
-        oxy_label(text, "Agent: ", width, 6em)
+        oxy_label(text, "Agent: ", width, 8em)
         oxy_textfield( 
             edit, '@ttm:agent',
-            width, 8em
-        ) " "
-        oxy_label(text, "Role: ", width, 6em)
+            width, 20%
+        ) "\A0\A0\A0\A0\A0\A0\A0\A0"
+        oxy_label(text, "Role: ", width, 8em)
         oxy_textfield( 
             edit, '@ttm:role'
-            width, 8em
+            width, 20%
         ) "\A"
-        oxy_label(text, "Whitespace: ", width, 6em)
+        oxy_label(text, "Whitespace: ", width, 8em)
         oxy_combobox( 
             edit, '@xml:space',
-            width, 8em
-        ) " "
-        oxy_label(text, "Language: ", width, 6em)
+            width, 20%
+        ) "\A0\A0\A0\A0\A0\A0\A0\A0"
+        oxy_label(text, "Language: ", width, 8em)
         oxy_textfield( 
             edit, '@xml:lang',
-            width, 8em
+            width, 20%
         );
 }
 /* paragraphs */
