@@ -86,11 +86,11 @@ This sample file should illustrate the application of EBU Tech 3360, MAPPING EBU
 				<tt:br/>
 				<tt:span style="WhiteOnBlack">on yellow background.</tt:span>
 			</tt:p>
-			<tt:p xml:id="sub12" style="textCenter" region="bottom" begin="00:00:26:24" end="00:00:29:05">
-				<tt:span style="BlueOnYellow">A blue </tt:span>
-				<tt:span style="BlueOnWhite">word</tt:span>
-				<tt:span style="BlueOnYellow"> on white </tt:span>
-			</tt:p>
+			<tt:p xml:id="sub12" style="textCenter" region="bottom" begin="00:00:26:24" end="00:00:29:05"
+					><tt:span style="BlueOnYellow">A blue </tt:span><tt:span style="BlueOnWhite"
+					>word</tt:span><tt:span style="BlueOnYellow"> on
+					<?oxy_comment_start author="george" timestamp="20150225T112741+0200" comment="Why white????"?>white<?oxy_comment_end?>
+				</tt:span></tt:p>
 			<tt:p xml:id="sub13" style="textCenter" region="bottom" begin="00:00:29:09" end="00:00:31:09">
 				<tt:span style="WhiteOnBlack">white on black</tt:span>
 			</tt:p>
