@@ -371,6 +371,9 @@ tt|p {
     margin:1em;
     padding:1em;
 }
+tt|span {
+    white-space:normal;
+}
 
 /* dynamic styling spans according to style */
 tt|p {
