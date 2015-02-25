@@ -65,7 +65,7 @@ tt|style:before, tt|region:before {
                 operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
                 arg-elementLocation, '.',
                 arg-name, 'oxy-edit'
-            )
+            ),
             showIcon, true
         );   
 }
@@ -78,7 +78,7 @@ tt|style:oxy-edit:before, tt|region:oxy-edit:before {
                 operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
                 arg-elementLocation, '.',
                 arg-name, 'oxy-edit'
-            )
+            ),
             showIcon, true
          );
 }
@@ -102,80 +102,80 @@ tt|style, tt|region {
 /* editing mode for styles - show all attributes */
 tt|style:oxy-edit {
     content:
-     oxy_label(text, "Style ID: ", width, 10em)
+     oxy_label(text, "Style ID: ", width, 30%)
         oxy_textfield(
             edit, '@xml:id',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Color: ", width, 10em)
+        oxy_label(text, "Color: ", width, 30%)
         oxy_textfield(
             edit, '@tts:color',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Background color: ", width, 10em)
+        oxy_label(text, "Background color: ", width, 30%)
         oxy_textfield(
             edit, '@tts:backgroundColor',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Font family: ", width, 10em)
+        oxy_label(text, "Font family: ", width, 30%)
         oxy_textfield(
             edit, '@tts:fontFamily',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Font size: ", width, 10em)
+        oxy_label(text, "Font size: ", width, 30%)
         oxy_textfield(
             edit, '@tts:fontSize',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Font style: ", width, 10em)
+        oxy_label(text, "Font style: ", width, 30%)
         oxy_textfield(
             edit, '@tts:fontStyle',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Font weight: ", width, 10em)
+        oxy_label(text, "Font weight: ", width, 30%)
         oxy_textfield(
             edit, '@tts:fontWeight',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Text align: ", width, 10em)
+        oxy_label(text, "Text align: ", width, 30%)
         oxy_textfield(
             edit, '@tts:textAlign',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Text decoration: ", width, 10em)
+        oxy_label(text, "Text decoration: ", width, 30%)
         oxy_textfield(
             edit, '@tts:textDecoration',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Line height: ", width, 10em)
+        oxy_label(text, "Line height: ", width, 30%)
         oxy_textfield(
             edit, '@tts:lineHeight',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Direction: ", width, 10em)
+        oxy_label(text, "Direction: ", width, 30%)
         oxy_textfield(
             edit, '@tts:direction',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Unicode BiDi: ", width, 10em)
+        oxy_label(text, "Unicode BiDi: ", width, 30%)
         oxy_textfield(
             edit, '@tts:unicodeBidi',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Padding: ", width, 10em)
+        oxy_label(text, "Padding: ", width, 30%)
         oxy_textfield(
             edit, '@tts:padding',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Multi Row Align: ", width, 10em)
+        oxy_label(text, "Multi Row Align: ", width, 30%)
         oxy_textfield(
             edit, '@ebutts:multiRowAlign',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Other styles: ", width, 10em)
+        oxy_label(text, "Other styles: ", width, 30%)
         oxy_textfield(
             edit, '@style',
-            width, 22em
+            width, 60%
         );
 }
 
@@ -206,40 +206,40 @@ tt|style:after {
 /* editing mode - show all region attributes */
 tt|region:oxy-edit {
     content:
-     oxy_label(text, "Region ID: ", width, 10em)
+     oxy_label(text, "Region ID: ", width, 30%)
         oxy_textfield(
             edit, '@xml:id',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Origin: ", width, 10em)
+        oxy_label(text, "Origin: ", width, 30%)
         oxy_textfield(
             edit, '@tts:origin',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Extent: ", width, 10em)
+        oxy_label(text, "Extent: ", width, 30%)
         oxy_textfield(
             edit, '@tts:extent',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Display align: ", width, 10em)
+        oxy_label(text, "Display align: ", width, 30%)
         oxy_combobox(
             edit, '@tts:displayAlign',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Padding: ", width, 10em)
+        oxy_label(text, "Padding: ", width, 30%)
         oxy_textfield(
             edit, '@tts:padding',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Writing mode: ", width, 10em)
+        oxy_label(text, "Writing mode: ", width, 30%)
         oxy_combobox(
             edit, '@tts:writingMode',
-            width, 22em
+            width, 60%
         ) "\A"
-        oxy_label(text, "Styles: ", width, 10em)
+        oxy_label(text, "Styles: ", width, 30%)
         oxy_textfield(
             edit, '@style',
-            width, 22em
+            width, 60%
         );
 }
 
@@ -265,30 +265,30 @@ tt|p:before {
                 operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
                 arg-elementLocation, '.',
                 arg-name, 'oxy-edit'
-            )
+            ),
             showIcon, true
         ) "\A0"
         oxy_button(
             action, oxy_action(
-                name, 'Show/Hide styles', 
+                name, 'Styles', 
                 description, 'Edit styles on embedded span elements', 
                 operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
                 arg-elementLocation, '.',
                 arg-name, 'oxy-editStyles'
-            )
+            ),
             showIcon, true
         ) "\A0"
         oxy_textfield(
             edit, '@xml:id',
-            width, 10em
+            width, 20%
         ) "\A0"
         oxy_textfield(
             edit, '@begin',
-            width, 10em
+            width, 20%
         ) "\A0"
         oxy_textfield(
             edit, '@end',
-            width, 10em
+            width, 20%
         );
 }
 /* all p information */
@@ -301,17 +301,17 @@ tt|p:oxy-edit:before {
                 operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
                 arg-elementLocation, '.',
                 arg-name, 'oxy-edit'
-            )
+            ),
             showIcon, true
         ) "\A0"
         oxy_button(
             action, oxy_action(
-                name, 'Show/Hide styles', 
+                name, 'Styles', 
                 description, 'Edit styles on embedded span elements', 
                 operation, 'ro.sync.ecss.extensions.commons.operations.TogglePseudoClassOperation', 
                 arg-elementLocation, '.',
                 arg-name, 'oxy-editStyles'
-            )
+            ),
             showIcon, true
         ) "\A"
         oxy_label(text, "ID: ", width, 8em)
