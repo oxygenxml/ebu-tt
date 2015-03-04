@@ -4,6 +4,11 @@
 @namespace ebutts "urn:ebu:tt:style";
 @namespace ttm "http://www.w3.org/ns/ttml#metadata";
 @namespace xml "http://www.w3.org/XML/1998/namespace";
+@namespace oxy "http://www.oxygenxml.com/extensions/author";
+
+oxy|processing-instruction {
+    display:none!important;
+}
 
 :root {
     font-family:arial, helvetica, sans-serif;
@@ -191,12 +196,17 @@ tt|style:after {
         oxy_label(
             text, 
             oxy_concat(attr(xml|id), ' ', attr(xml|id), ' ', attr(xml|id), ' '),
-            color, oxy_xpath("replace((@*:color[.!=''], 'white')[1], 'transparent', 'white')"),
-            background-color, oxy_xpath("replace((@*:backgroundColor[.!=''], 'black')[1], 'transparent', 'black')"),
+            
             width, 100%,
             styles, oxy_concat(
                 'text-align:',
                 oxy_xpath("replace(replace((@*:textAlign, 'left')[1], 'start', 'left'), 'end','right')"),
+                ';'
+                'color:', 
+                oxy_xpath("replace((@*:color[.!=''], 'white')[1], 'transparent', 'white')"),
+                ';'
+                'background-color:', 
+                oxy_xpath("replace((@*:backgroundColor[.!=''], 'black')[1], 'transparent', 'black')"),
                 ';'
             )
         );
