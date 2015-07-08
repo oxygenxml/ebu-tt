@@ -16,6 +16,15 @@ Follow these steps to install the EBU-TT framework
  - select the "oXygen XML Editor framework for EBU-TT" and follow the wizzard 
  to install the framework 
 
+oXygen WebApp
+-------------
+The framework just associates a schema and a CSS with the document. 
+If the schema and the CSS are specified within the document then the validation
+and the visual editing will work even without installing the framework. 
+For example, we can see how such a document works in the oXygen WebApp using the
+our test server to load one of the sample documents directly from GitHub
+https://www.oxygenxml.com/webapp-demo-aws/app/demo-mobile.html?url=https://raw.githubusercontent.com/oxygenxml/ebu-tt/master/sample/ebu-tt-samplefile-colours.xml
+
 License
 -------
 
