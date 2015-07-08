@@ -7,7 +7,7 @@ EBU-TT files as an oXygen framework.
 Installation
 ------------
 
-Foolow these steps to install the EBU-TT framework  
+Follow these steps to install the EBU-TT framework  
  - open oXygen
  - go to *Help*->*Install new Add-Ons...* 
  - paste the following update site 
