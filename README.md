@@ -11,7 +11,7 @@ Foolow these steps to install the EBU-TT framework
  - open oXygen
  - go to *Help*->*Install new Add-Ons...* 
  - paste the following update site 
-   `https://github.com/oxygenxml/ebu-tt/raw/dev/ebu-tt/site.xml`
+   `https://github.com/oxygenxml/ebu-tt/raw/dev/site.xml`
  - select the "oXygen XML Editor framework for EBU-TT" and follow the wizzard 
  to install the framework 
 
