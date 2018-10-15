@@ -29,9 +29,9 @@ License
 -------
 
 The project is licensed for use under the 
-[Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0).
+[Apache License 2.0](https://github.com/oxygenxml/ebu-tt/blob/master/LICENSE).
 
-Copyright © 2015, Syncro Soft SRL 
+Copyright Â© 2015, Syncro Soft SRL 
 
 
 
